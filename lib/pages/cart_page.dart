@@ -13,12 +13,26 @@ class CartPage extends StatelessWidget {
         // cart
         final userCart = shop.cart;
 
-        //scaffold
+        //scaffold ui
         return Scaffold(
           appBar: AppBar(
-            title: Text("Cart"),
+            title: const Text("Cart"),
             backgroundColor: Colors.transparent,
             foregroundColor: Theme.of(context).colorScheme.inversePrimary,
+            actions: [
+              //clear button cart
+              IconButton(
+                onPressed: () {
+                  shop.clearCart();
+                }, 
+                icon: const Icon(Icons.delete)
+                ),
+              //checkout button cart
+              IconButton(
+                onPressed: () {}, 
+                icon: const Icon(Icons.check)
+                )
+            ],
           ),
           body: Column(
             children: [
