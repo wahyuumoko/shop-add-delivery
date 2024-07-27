@@ -1,3 +1,4 @@
+import 'package:app1/components/my_button.dart';
 import 'package:app1/components/my_cart_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:app1/models/shop.dart';
@@ -16,7 +17,7 @@ class CartPage extends StatelessWidget {
         // scaffold UI
         return Scaffold(
           appBar: AppBar(
-            title: const Text("Cart"),
+            title: const Text("Cart") ,
             backgroundColor: Colors.transparent,
             foregroundColor: Theme.of(context).colorScheme.inversePrimary,
             actions: [
@@ -56,16 +57,32 @@ class CartPage extends StatelessWidget {
           ),
           body: Column(
             children: [
-              Expanded(
-                child: ListView.builder(
-                  itemCount: userCart.length,
-                  itemBuilder: (context, index) {
-                    final cartItem = userCart[index];
 
-                    return MyCartTile(cartItem: cartItem);
-                  },
-                ),
+              //list of cart
+              Column(
+                children: [
+                  userCart.isEmpty 
+                  ? const Expanded(
+                    child: Center(
+                      child: Text("Cart is empty...."),
+                  ),
+                  )
+                  : Expanded(
+                    child: ListView.builder(
+                      itemCount: userCart.length,
+                      itemBuilder: (context, index) {
+                        final cartItem = userCart[index];
+              
+                        return MyCartTile(cartItem: cartItem);
+                      },
+                    ),
+                  ),
+                ],
               ),
+            //button to pay
+            MyButton(onTap: () {}, text: "Go to pay",)
+
+
             ],
           ),
         );
