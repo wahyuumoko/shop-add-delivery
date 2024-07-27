@@ -1,5 +1,6 @@
 import 'package:app1/components/my_button.dart';
 import 'package:app1/components/my_cart_tile.dart';
+import 'package:app1/pages/payment_page.dart';
 import 'package:flutter/material.dart';
 import 'package:app1/models/shop.dart';
 import 'package:provider/provider.dart';
@@ -85,10 +86,17 @@ class CartPage extends StatelessWidget {
                 ),
               ),
             //button to pay
-            MyButton(onTap: () {}, text: "Go to pay"),
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:708792963.
-            const SizedBox(height: 25),
+            MyButton(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const PaymentPage(),
+                  ),
+              ), 
+            text: "Go to pay"
+            ),
 
+            const SizedBox(height: 25),
             ],
           ),
         );
