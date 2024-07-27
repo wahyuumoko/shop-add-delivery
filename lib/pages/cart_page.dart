@@ -59,29 +59,35 @@ class CartPage extends StatelessWidget {
             children: [
 
               //list of cart
-              Column(
-                children: [
-                  userCart.isEmpty 
-                  ? const Expanded(
-                    child: Center(
-                      child: Text("Cart is empty...."),
-                  ),
-                  )
-                  : Expanded(
-                    child: ListView.builder(
-                      itemCount: userCart.length,
-                      itemBuilder: (context, index) {
-                        final cartItem = userCart[index];
-              
-                        return MyCartTile(cartItem: cartItem);
-                      },
+              Expanded(
+                child: Column(
+                  children: [
+                    userCart.isEmpty 
+                    ? const Expanded(
+                       child: Center(
+                        child: Text("Cart is empty...."),
+                        ),
+                      )
+                    : Expanded(
+                      child: ListView.builder(
+                        itemCount: userCart.length,
+                        itemBuilder: (context, index) {
+                
+                          //get individual cart item
+                          final cartItem = userCart[index];
+                
+                        // return cart tile
+                          return MyCartTile(cartItem: cartItem);
+                        },
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             //button to pay
-            MyButton(onTap: () {}, text: "Go to pay",)
-
+            MyButton(onTap: () {}, text: "Go to pay"),
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:708792963.
+            const SizedBox(height: 25),
 
             ],
           ),
