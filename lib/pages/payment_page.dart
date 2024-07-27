@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 
+import 'delivery_progress_page.dart';
+
 class PaymentPage extends StatefulWidget {
   const PaymentPage({super.key});
 
@@ -36,6 +38,24 @@ class _PaymentPageState extends State<PaymentPage> {
               ],
             ),
           ),
+          actions: [
+            // cancel btn
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+            child: const Text("Cancel"),
+            ),
+            
+            // yes btn
+            TextButton(
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const DeliveryProgressPage(),
+                  ),
+              ), 
+            child: const Text("Yes"),
+            ),
+          ],
         ),
       );
     }
