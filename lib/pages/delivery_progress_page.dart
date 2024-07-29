@@ -31,7 +31,7 @@ Widget _buildBottomNavBar (BuildContext context) {
   return Container(
     height: 100,
     decoration: BoxDecoration(
-      color: Theme.of(context).colorScheme.primary,
+      color: Theme.of(context).colorScheme.secondary,
       borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(40),
           topRight: Radius.circular(40),
