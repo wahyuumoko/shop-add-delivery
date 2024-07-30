@@ -15,10 +15,10 @@ class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomePage> createState() => controller();
 }
 
-class _HomePageState extends State<HomePage>
+class controller extends State<HomePage>
     with SingleTickerProviderStateMixin {
   //tab contoller
   late TabController _tabController;

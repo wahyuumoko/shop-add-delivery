@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "659759344852",
+    "project_id": "shopappdelivery-fd552",
+    "storage_bucket": "shopappdelivery-fd552.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:659759344852:android:dcb6ebfc1e73defa8bdf41",
+        "android_client_info": {
+          "package_name": "com.shopdelivery.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDF1FVw5Fw5qZIS-JEobzAYxiDKtbB3Cos"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
