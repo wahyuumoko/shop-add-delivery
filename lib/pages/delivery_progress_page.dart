@@ -37,8 +37,10 @@ Widget _buildBottomNavBar (BuildContext context) {
           topRight: Radius.circular(40),
         ),
       ),
+      padding: const EdgeInsets.all(25),
       child: Row(
         children: [
+          // profile pict driver
           Container(
             decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.surface,
@@ -46,9 +48,67 @@ Widget _buildBottomNavBar (BuildContext context) {
             ),
             child: IconButton(
               onPressed: () {},
-              icon: Icon(Icons.person),
+              icon: const Icon(Icons.person),
             ),
-          )
+          ),
+
+          const SizedBox(width: 10),
+
+          // driver detail
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Wahyu Moko",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.onSecondary,
+                ),
+              ),
+              Text(
+                "Delivery Driver",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.onSecondary,
+                ),
+              ),
+            ],
+          ),
+
+          const Spacer(),
+          
+          Row(
+            children: [
+              // message btn
+              Container(
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.surface,
+              shape: BoxShape.circle,
+            ),
+            child: IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.message),
+              color: Theme.of(context).colorScheme.primary,
+            ),
+          ),
+
+            const SizedBox(width: 10),
+
+              // call btn
+              Container(
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.surface,
+              shape: BoxShape.circle,
+            ),
+            child: IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.call),
+              color: Colors.green,
+            ),
+          ),
+
+            ],
+          ),
         ],
       ),
     );
